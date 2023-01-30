@@ -28,8 +28,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install dependencies
+        working-directory: ./webapp
         run: npm install
       - name: Build with Jekyll
+        working-directory: ./webapp
         run: npm run build
         env:
           CI: false
