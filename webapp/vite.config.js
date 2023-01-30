@@ -6,6 +6,9 @@ import { defineConfig } from 'vite'
 // https://vitejs.dev/config/
 export default defineConfig({
     root: path.resolve(__dirname, 'src'),
+    build: {
+        outDir: process.env.GITHUB_REPOSITORY ? (process.env.GITHUB_REPOSITORY + "/").match(/(\/.*)/)?.[1] : '../dist'
+    },
     server: {
         port: 3000,
         hot: true

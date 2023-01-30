@@ -105,4 +105,4 @@ dist
 
 *.env
 *.code-workspace
-*/dist
+*/webapp/dist
