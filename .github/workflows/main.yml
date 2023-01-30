@@ -35,6 +35,13 @@ jobs:
         run: npm run build
         env:
           CI: false
+      - name: Archive production artifacts
+        working-directory: ./webapp
+        uses: actions/upload-artifact@v3
+        with: 
+          name: artifacts
+          path: dist
+          retention-days: 5
 
   # Deployment job
   deploy:
@@ -45,7 +52,7 @@ jobs:
     needs: build
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
+        #id: deployment
         uses: actions/deploy-pages@v1
         with:
           branch: build
