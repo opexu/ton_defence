@@ -23,3 +23,11 @@ Contains source codes of smart contracts and tests
   - To play the game you need to connect wallet to webapp
   - On webapp launched tap "Connect" button
   - Allow the wallet app to make transactions within the TON blockchain
+
+=========================================================================
+
+### The application is decentralized and does not store or send any user information to third parties.
+### The application is stored in GitHub Pages. All source code is here and available to everyone.
+### The bot is only available in a private conversation. All interactions within the application are private: User <-> Blockchain.
+### If you find a bug, please contact us.
+=========================================================================
