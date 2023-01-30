@@ -1,11 +1,21 @@
 {
-  "name": "webapp",
-  "version": "1.0.0",
-  "description": "webapp application to telegram",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "MIT"
+    "name": "webapp",
+    "version": "1.0.0",
+    "description": "webapp application to telegram",
+    "main": "index.js",
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite --host"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "vite": "latest",
+        "autoprefixer": "latest",
+        "postcss": "latest",
+        "postcss-import": "latest",
+        "tailwindcss": "latest"
+    },
+    "author": "",
+    "license": "MIT"
 }
