@@ -36,11 +36,10 @@ jobs:
         env:
           CI: false
       - name: Archive production artifacts
-        working-directory: ./webapp
         uses: actions/upload-artifact@v3
         with: 
           name: artifacts
-          path: dist
+          path: webapp/dist
           retention-days: 5
 
   # Deployment job
