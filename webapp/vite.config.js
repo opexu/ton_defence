@@ -7,8 +7,9 @@ import { defineConfig } from 'vite'
 export default defineConfig({
     root: path.resolve(__dirname, 'src'),
     build: {
-        outDir: process.env.GITHUB_REPOSITORY ? ((process.env.GITHUB_REPOSITORY ?? "") + "/").match(/(\/.*)/)?.[1] : '../dist'
+        outDir: '../dist'
     },
+    base: ((process.env.GITHUB_REPOSITORY ?? ".") + "/").match(/(\/.*)/)?.[1],
     server: {
         port: 3000,
         hot: true
