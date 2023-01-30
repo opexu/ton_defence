@@ -11,7 +11,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -27,26 +27,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install dependencies
+      - name: npm install, build
         working-directory: ./webapp
-        run: npm install
-      - name: Build with Jekyll
-        working-directory: ./webapp
-        run: npm run build
+        run: | 
+          npm install
+          npm run build
         env:
           CI: false
       - name: Archive production artifacts
-        #uses: actions/upload-artifact@v3
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-artifact@v3
+        with: 
+          name: atrifacts
+          path: dist
+          retention-days: 5
 
   # Deployment job
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    #environment:
+      #name: github-pages
+      #url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: build # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
