@@ -7,9 +7,9 @@ import { defineConfig } from 'vite'
 export default defineConfig({
     root: path.resolve(__dirname, 'src'),
     build: {
-        outDir: '../wp/dist'
+        outDir: '../dist'
     },
-    base: ((process.env.GITHUB_REPOSITORY ?? ".") + "/").match(/(\/.*)/)?.[1],
+    base: ((process.env.GITHUB_REPOSITORY ?? "") + "/").match(/(\/.*)/)?.[1],
     server: {
         port: 3000,
         hot: true
