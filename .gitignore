@@ -106,3 +106,5 @@ dist
 *.env
 *.code-workspace
 */webapp/dist
+
+*_drafts
